@@ -1,0 +1,525 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  background-color: #f0f2f5;
+}
+
+/* --------------------------------------------------------------------- scroller */
+.thin_slider::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.thin_slider::-webkit-scrollbar-thumb {
+  background-color: #adb5bd; /* You can set the color of the scrollbar thumb */
+  border-radius: 4px;
+}
+
+.thin_slider::-webkit-scrollbar-track {
+  background-color: #dee2e6; /* You can set the color of the scrollbar track */
+  border-radius: 4px;
+}
+/* ----------------------------------- scroller end --------------------------------- */
+.login-input .custom_input input {
+  min-height: 48px;
+  padding: 0px 10px !important;
+}
+
+.custom_input .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0.75rem 1rem !important;
+  font-size: 0.875rem;
+}
+
+.css-tzv9pt-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
+  border-radius: 10px !important;
+  /* width: 200px; */
+}
+#settings-menu .css-tzv9pt-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+}
+.css-152mnda-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 1rem !important;
+  padding-left: 0.5rem !important;
+}
+.PhoneInputInput {
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+.css-p51h6s-MuiInputBase-input-MuiOutlinedInput-input {
+  /* color: black !important; */
+}
+.dark .PhoneInputInput {
+  color: white !important;
+}
+.custom_calendar.react-calendar {
+  background-color: #25282a !important;
+  color: white !important;
+}
+.react-calendar {
+  border: none !important;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 5.125em !important;
+  width: 100% !important;
+
+  /* height: 100vh !important; */
+}
+
+.custom_calendar.react-calendar .react-calendar__tile {
+  color: white;
+  width: 200px;
+}
+.react-calendar__tile--highlight {
+  background: blue;
+  color: white;
+  width: 200px;
+}
+.custom_calendar .react-calendar__tile--now {
+  color: white !important;
+}
+.react-calendar__tile {
+  border: 1px solid rgba(231, 234, 243, 0.5) !important;
+  width: 100px !important;
+  height: 150px !important;
+}
+.custom_calendar .react-calendar__tile {
+  border: 1px solid rgba(231, 234, 243, 0.1) !important;
+}
+.react-calendar__tile--now {
+  background: transparent !important;
+  /* background-color: red !important; */
+  border: 1px solid gray !important;
+  color: #000 !important;
+}
+
+.react-calendar__tile--now:hover,
+.react-calendar__tile--active:hover,
+.react-calendar__tile--hover {
+  background: transparent !important;
+  color: #000;
+}
+.react-calendar__navigation {
+  display: block !important;
+}
+abbr[title] {
+  text-decoration: none !important;
+}
+/* .react-calendar__tile--hasActive {
+  background: #3b82f6;
+  color: white;
+}
+.react-calendar__navigation button {
+  color: white !important;
+  
+} */
+.css-r0tw72-MuiTabs-indicator,
+.css-h5ait8 {
+  background-color: transparent !important;
+}
+.css-jjgwfq-MuiTabs-indicator {
+  background-color: transparent !important;
+}
+.css-lc1no1-MuiInputBase-root-MuiOutlinedInput-root {
+  background-color: rgb(232, 240, 254);
+}
+.phone-input-focused {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 9px 0px;
+  transition: box-shadow 0.3s ease-in-out background 0.3s ease-in-out;
+}
+
+/* Add this to your CSS file */
+.phone-input {
+  border: 1px solid rgba(231, 234, 243, 0.7);
+  padding-left: 0.8rem;
+  border-radius: 5px;
+  height: 1.5rem;
+  background: #f6f7fa;
+  /* padding-top: 22px;
+  padding-bottom: 22px; */
+}
+
+.phone-input.dark {
+  color: white;
+  background: #333333;
+  border: 0.0625rem solid white;
+}
+.phone-input.dark:focus-within {
+  color: white;
+  background: #25282a;
+  border: 0.0625rem solid white;
+}
+.phone-input:focus-within {
+  background: white;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  height: 1rem !important;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 9px 16px !important;
+}
+.css-lc1no1-MuiInputBase-root-MuiOutlinedInput-root {
+  background-color: #f6f7fa;
+}
+
+/* -------------------------------------------------------------------------- carousel animation */
+.next-enter {
+  transform: translateX(100%);
+}
+
+.next-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.next-exit {
+  transform: translateX(0);
+}
+
+.next-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}
+
+.prev-enter {
+  transform: translateX(-100%);
+}
+.prev-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+.prev-exit {
+  transform: translateX(0);
+}
+.prev-exit-active {
+  transform: translateX(100%);
+  transition: transform 300ms ease-in-out;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: inherit !important;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 0px 0px #ffffff; /* Adjust the color to match your input background */
+}
+
+/* For non-webkit browsers */
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: inherit !important;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 0px 0px #ffffff; /* Adjust the color to match your input background */
+}
+/* -------------------------------------------------------------------------- carousel animation end*/
+/* App.css or any relevant stylesheet */
+.signature-canvas {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* .providerTabel .css-i4bv87-MuiSvgIcon-root {
+  color: rgb(247, 245, 245) !important;
+  font-size: 1rem;
+} */
+/* .checkbox.MuiCheckbox-colorPrimary {
+  color: rgb(238, 235, 235) !important;
+} */
+.Mui-checked {
+  color: blue;
+}
+.css-1kfznfs-MuiTooltip-tooltip {
+  background-color: #1e2022 !important;
+}
+.css-kudwh-MuiTooltip-arrow {
+  color: #1e2022 !important;
+}
+.css-38h1bs-MuiPaper-root-MuiPopover-paper {
+  box-shadow: 0 0.6125rem 2.5rem 0.6125rem rgba(140, 152, 164, 0.175) !important;
+  border-radius: 0.75rem !important;
+}
+.calender.react-calendar button abbr {
+  height: "100%";
+  line-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 1rem !important;
+}
+.login-input .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 1.5rem !important;
+}
+.setting_tab.MuiTabs-indicator {
+  background-color: transparent !important;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 1.5rem !important;
+}
+.MuiInputBase-root {
+  height: 2.6rem !important;
+}
+
+/* Center content in the header */
+.rbc-header {
+  text-align: center !important; /* Center text in header cells */
+  color: #8c98a4 !important;
+  font-weight: 500 !important;
+}
+
+/* Center content in day slots */
+.rbc-day-slot {
+  display: flex !important; /* Make the day slot a flex container */
+  flex-direction: column !important; /* Stack children vertically */
+  justify-content: center !important; /* Center vertically */
+  align-items: center !important; /* Center horizontally */
+  padding: 10px !important; /* Add padding */
+}
+
+/* Center the date in the day slots specifically */
+.rbc-day-slot .rbc-day-slot {
+  display: flex !important; /* Ensure the cell is a flex container */
+  justify-content: center !important; /* Center content horizontally */
+  align-items: center !important; /* Center content vertically */
+  flex-direction: column !important; /* Ensure vertical stacking */
+  text-align: center !important; /* Center text */
+}
+
+/* Centering event text */
+.rbc-event {
+  display: flex !important;
+  justify-content: center !important; /* Center content horizontally */
+  align-items: center !important; /* Center content vertically */
+  margin: 5px 0; /* Add margin for spacing */
+}
+
+/* Ensure the date in month view is centered */
+.rbc-month-view .rbc-day-slot {
+  position: relative;
+}
+
+/* Make sure the day number is centered */
+.rbc-month-view .rbc-day-slot .rbc-day-bg {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100%; /* Ensure it takes full height */
+}
+
+/* Adjusting the day number style */
+.rbc-month-view .rbc-day-slot .rbc-day-number {
+  margin: 0; /* Remove any default margins */
+  text-align: center; /* Ensure text is centered */
+  font-weight: bold; /* Make it more noticeable */
+}
+
+.rbc-toolbar {
+  margin-bottom: 1.5rem !important;
+}
+.rbc-date-cell {
+  text-align: center !important;
+}
+.rbc-button-link {
+  font-weight: 700 !important;
+}
+
+.rbc-show-more {
+  padding-left: 1.5rem !important;
+  font-weight: 500 !important;
+}
+
+.rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td {
+  border-left: 1px solid #ddd;
+}
+/* .big_calendar_white {
+  background-color: white !important;
+} */
+
+.big_calendar_dark .rbc-month-view {
+  border: 1px solid rgba(196.88125, 200.3, 203.71875, 0.2) !important;
+}
+.rbc-header {
+  padding: 10px 0 !important;
+}
+.big_calendar_dark .rbc-header {
+  padding: 10px 0 !important;
+  border: 1px solid rgba(196.88125, 200.3, 203.71875, 0.2) !important;
+}
+
+.big_calendar_dark .rbc-month-view .rbc-day-bg {
+  border: 1px solid rgba(196.88125, 200.3, 203.71875, 0.2) !important;
+}
+.big_calendar_dark .rbc-month-row {
+  border: 1px solid rgba(196.88125, 200.3, 203.71875, 0.2) !important;
+}
+.rbc-off-range-bg {
+  background-color: rgba(196.88125, 200.3, 203.71875, 0.2) !important;
+}
+
+/* Alternating row colors for better readability */
+.rbc-agenda-table tbody tr {
+  background-color: white !important;
+}
+.custom-event {
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.custom-event:hover {
+  color: #6d4a96 !important;
+}
+.admin_custom_event:hover {
+  color: #377dff !important;
+}
+
+.big_calendar_white .rbc-month-view,
+.big_calendar_white .rbc-time-view {
+  background-color: white !important;
+  /* margin-top: 2rem !important; */
+}
+.MuiTooltip-tooltip {
+  background-color: #132144 !important;
+}
+.moreAction .MuiMenu-paper {
+  box-shadow: 0 0.6125rem 2.5rem 0.6125rem rgba(140, 152, 164, 0.175) !important;
+}
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border: 0.0625rem solid rgba(231, 234, 243, 0.7) !important;
+  background-color: #f7f9fc !important;
+}
+.dark .ql-toolbar.ql-snow,
+.dark .ql-container.ql-snow {
+  border: 0.0625rem solid rgba(231, 234, 243, 0.7) !important;
+  background-color: #333 !important;
+}
+/* .dark .ql-snow * {
+  color: red !important;
+} */
+.dark .ql-toolbar .ql-picker-label {
+  color: #fff !important;
+}
+.dark .ql-toolbar .ql-active {
+  color: red !important;
+}
+.ql-toolbar .ql-stroke {
+  color: #fff !important; /* Change icon stroke color */
+}
+.dark .ql-editor.ql-blank::before {
+  color: #888 !important; /* Change this to your desired placeholder color */
+}
+.rbc-date-cell {
+  height: 14px !important;
+}
+/* .MuiAvatar-root {
+  width: 42px !important;
+  height: 42px !important;
+} */
+
+/*===================================================-----------------------------------------------   Form builder */
+.svc-creator__banner {
+  display: none !important;
+}
+.svc-top-bar {
+  width: 100% !important;
+  position: fixed;
+  bottom: 0;
+  max-width: 95%;
+  margin: 0 auto !important;
+  z-index: 999;
+}
+@media (min-width: 1500px) {
+  .svc-top-bar {
+    max-width: 78% !important;
+  }
+}
+.svc-tab-designer .sd-container-modern.sd-container-modern--static {
+  max-width: 100% !important;
+}
+.survey-creator-red-theme {
+  --toolbox-item-background: #ffeeee !important;
+  --toolbox-item-hover-background: #ffdddd !important;
+
+  --question-selected-border: rgba(55, 125, 255) !important;
+  --question-background-selected: #fff0f0 !important;
+
+  --tab-active-color: rgba(55, 125, 255) !important;
+  --tab-active-background: #fff0f0 !important;
+
+  --button-border-radius: 4px;
+  --button-hover-background: rgba(55, 125, 255) !important;
+
+  --scrollbar-thumb-color: rgba(55, 125, 255) !important;
+  --scrollbar-track-color: rgba(55, 125, 255) !important;
+}
+.svc-add-new-item-button__text {
+  color: rgba(55, 125, 255) !important;
+}
+.sd-navigation__complete-btn {
+  background-color: rgba(55, 125, 255) !important;
+}
+.svc-page {
+  background-color: #fff !important;
+
+  border: none !important;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important; */
+}
+.svc-page__content--selected.svc-page__content--selected {
+  /* box-shadow: 0 0 0 var(--ctr-survey-page-border-width-selected, 2px) var(--ctr-survey-page-border-color-selected, var(--sjs-secondary-backcolor, var(--secondary, #ff9814))); */
+  background: white !important;
+  box-shadow: none !important;
+}
+.svc-header {
+  /* background-color: red !important; */
+}
+
+.svc-title {
+  color: white !important;
+}
+
+.svc-question {
+  color: red !important;
+}
+.svc-toolbox .svc-scroll__scroller {
+  background-color: white !important;
+  margin-top: 1rem !important;
+}
+.svc-button {
+  color: red !important;
+  /* background-color: red !important; */
+}
+
+.svc-btn {
+  color: red !important;
+  border: 1px solid rgba(55, 125, 255) !important;
+}
+.sd-input {
+  border: 1px solid rgba(55, 125, 255) !important;
+}
+.sd-input:focus {
+  box-shadow: 0px 0px 0px 0px rgba(55, 125, 255) !important;
+}
+.svc-question__content {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+}
+.svc-question__content--text .svc-question__content--selected {
+}
+.svc-question__content--selected:not(.svc-question__content--dragged) {
+  /* box-shadow: none !important; */
+  /* box-shadow: 0 0 0 var(--ctr-survey-question-panel-border-width-selected, 2px)
+    var(
+      --ctr-survey-question-panel-border-color-selected,
+      var(--sjs-secondary-backcolor, var(--secondary, #ff9814))
+    ); */
+}
+/*===================================================-----------------------------------------------   Form builder end */

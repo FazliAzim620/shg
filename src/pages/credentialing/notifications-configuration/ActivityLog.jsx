@@ -1,0 +1,235 @@
+import React, { useState } from "react";
+import {
+  Box,
+  Typography,
+  Avatar,
+  Button,
+  ListItemAvatar,
+  Divider,
+  InputAdornment,
+  TextField,
+} from "@mui/material";
+import { RefreshOutlined } from "@mui/icons-material";
+import { useSelector } from "react-redux";
+import CustomTypographyBold from "../../../components/CustomTypographyBold";
+const ActivityLog = ({ data, timesheet }) => {
+  const darkMode = useSelector((state) => state.theme.mode);
+
+  const groupedActivities = data?.reduce((acc, activity) => {
+    const date = new Date(activity.created_at).toLocaleDateString();
+    if (!acc[date]) acc[date] = [];
+    acc[date].push(activity);
+    return acc;
+  }, {});
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
+
+    if (
+      date.getDate() === today.getDate() &&
+      date.getMonth() === today.getMonth() &&
+      date.getFullYear() === today.getFullYear()
+    ) {
+      return "Today";
+    } else if (
+      date.getDate() === yesterday.getDate() &&
+      date.getMonth() === yesterday.getMonth() &&
+      date.getFullYear() === yesterday.getFullYear()
+    ) {
+      return "Yesterday";
+    } else {
+      return date.toLocaleDateString();
+    }
+  };
+
+  return (
+    <Box
+      sx={{
+        minHeight: "50vh",
+        overflowX: "hidden",
+        // my: 2,
+        pt: 4,
+        bgcolor: "background.page_bg",
+      }}
+    >
+      <Box
+        sx={{
+          //   borderRadius: "10px",
+          bgcolor: "background.paper",
+          mt: "5",
+          pt: "1rem",
+          pb: "1.5rem",
+          boxShadow: "0 .375rem .75rem rgba(140, 152, 164, .075)",
+        }}
+      >
+        <Box
+          sx={{
+            px: 2,
+            pb: 3,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            position: "sticky",
+            top: 0,
+            backgroundColor: "background.paper",
+            zIndex: 100,
+            borderBottom: "1px solid rgba(206, 212, 218, 0.6)",
+            paddingTop: "1rem",
+            paddingBottom: "1rem",
+            mb: 2,
+          }}
+        >
+          <CustomTypographyBold color="text.black" fontSize={"1.1rem"}>
+            Activity log
+          </CustomTypographyBold>
+        </Box>
+
+        {data?.length > 0 && (
+          <Box
+            className="thin_slider"
+            sx={{
+              p: 2,
+              maxHeight: "1122px",
+              overflowY: "auto",
+              bgcolor: "background.page_bg",
+              mx: 2,
+              borderRadius: "12px",
+            }}
+          >
+            {Object?.keys(groupedActivities)?.map((date, index) => (
+              <Box key={index} sx={{ mb: 2 }}>
+                <Typography
+                  variant="caption"
+                  color="text.secondary"
+                  sx={{
+                    fontWeight: 700,
+                    pb: 3,
+                    fontSize: "0.6rem",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {formatDate(date)}
+                </Typography>
+
+                {/* Render activities for each date */}
+                {groupedActivities[date].map((activity, idx) => (
+                  <Box
+                    key={activity.id}
+                    sx={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      position: "relative",
+                      pt: 2,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        left: "1rem",
+                        top: "4rem",
+                        bottom: "-0.3rem",
+                        width: "2px",
+                        bgcolor:
+                          darkMode === "dark"
+                            ? "text.or_color"
+                            : "rgba(19, 33, 68, .1)",
+                        zIndex: 1,
+                      }}
+                    />
+
+                    <ListItemAvatar>
+                      <Avatar src="/path-to-avatar-image.jpg" />
+                    </ListItemAvatar>
+                    <Box
+                      sx={{ display: "flex", flexDirection: "column", gap: 6 }}
+                    >
+                      <Box>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color:
+                              darkMode === "dark"
+                                ? "text.or_color"
+                                : "text.black",
+                            fontSize: ".875rem",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {activity.username}
+                        </Typography>
+
+                        <Typography
+                          variant="caption"
+                          color="text.secondary"
+                          sx={{
+                            fontSize: "0.75rem",
+                            display: "flex",
+                            gap: 1,
+                            alignItems: "center",
+                          }}
+                        >
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: activity.description || "",
+                            }}
+                          ></p>
+                        </Typography>
+                        {activity.note && (
+                          <Typography
+                            variant="caption"
+                            color="text.secondary"
+                            sx={{ fontSize: "0.75rem", display: "block" }}
+                          >
+                            {activity.note}
+                          </Typography>
+                        )}
+                        <Box sx={{ height: "1rem" }} />
+                      </Box>
+                    </Box>
+                  </Box>
+                ))}
+              </Box>
+            ))}
+          </Box>
+        )}
+        {data?.length > 10 && (
+          <Box sx={{ textAlign: "center", mt: 2, maxWidth: "100%", ml: 3 }}>
+            <Button
+              variant="outlined"
+              sx={{
+                mr: 2,
+                textTransform: "capitalize",
+                color: "text.primary",
+                fontSize: "0.8125rem",
+                fontWeight: 400,
+                border: "1px solid rgba(231, 234, 243, .7)",
+                padding: ".6125rem 1rem",
+                minWidth: 0,
+                width: "129px",
+                bgcolor: "rgba(55, 125, 255, 0.1)",
+                "&:hover": {
+                  bgcolor: "rgba(55, 125, 255, 0.1)",
+                  border: "1px solid rgba(231, 234, 243, .7)",
+                  boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                  color: "text.main",
+                  transform: "scale(1.01)",
+                },
+                "&:focus": {
+                  outline: "none",
+                },
+              }}
+            >
+              <RefreshOutlined sx={{ fontSize: "1rem", mr: 1 }} />
+              Load more
+            </Button>
+          </Box>
+        )}
+      </Box>
+    </Box>
+  );
+};
+
+export default ActivityLog;
